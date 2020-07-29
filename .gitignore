@@ -1,0 +1,6 @@
+__pycache__
+gymsite
+venv
+flask_app/DB
+flask_app/static/profile_pics
+flask_app/gymsite.db
