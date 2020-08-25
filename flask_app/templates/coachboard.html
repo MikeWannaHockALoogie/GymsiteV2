@@ -5,8 +5,6 @@
 <a class='btn bg-danger rounded-pill shadow mb-4 ml-2'
     href='{{ url_for("delete_workout", wod_id = workout.id) }}'>Delete
     Workout</a>
-<a class='btn bg-grad rounded-pill shadow mb-4 ml-2 white'
-    href='{{ url_for("coachboard", wod_id = workout.id) }}'>Coachboard</a>
 {% endif %}
 <div class='container-fluid shadow rounded  '>
     {% for comp in workout.components %}
@@ -16,11 +14,11 @@
 </div>
 
 <div class='container mb-4 shadow p-1 rounded w-auto'>
-    {% if not component_scores %}
+    {% if not scores %}
     <table class='container-fluid table  rounded'>
 
         <tr>
-            <th scope='col'>Date</th>
+            <th scope='col'>Athlete</th>
             <th scope='col'>Movement</th>
             <th scope='col'>Score</th>
             <th scope='col'>Notes</th>
@@ -40,26 +38,21 @@
 
             <tr>
                 <th scope='col'>Athlete</th>
-                <th scrope='col'>Component</th>
+                <th scrope='col'>Movement</th>
                 <th scope='col'>Score</th>
 
             </tr>
 
-            {% for user, scores in component_scores.items()%}
+            {% for user, scores in scores.items()%}
 
             <tr>
                 <td>{{ user.username }} </td>
                 {% for score in scores %}
             <tr>
                 <td></td>
-                <td style='white-space: pre-line;'>{{score['description'] }} </td>
+                <td style='white-space: pre-line;'>{{ score['name'] }} </td>
                 <td>{{ score['score'] }} ({{ score['score_type']}})</td>
-                {% if current_user == user %}
-                <td><a class='btn bg-danger white p-3' style='height: auto;'
-                        href='{{ url_for("delete_score", score_id = score["score_id"], comp_id = score["comp_id"]) }}'>Delete
-                        Score</a>
-                </td>
-                {% endif %}
+
             </tr>
 
             {% endfor %}

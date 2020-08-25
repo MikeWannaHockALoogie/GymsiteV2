@@ -130,6 +130,13 @@
             <td> {{ s['metcon'] }} {{ s['type'] }}</td>
             <td>{{ score['notes']}}</td>
         </tr>
+        {% if s['type'] == 'lbs' %}
+        <tr>
+            <td>{{ move }}: </td>
+            <td> {{ s['total'] }} 5 rep max </td>
+            <td>{{ score['notes']}}</td>
+        </tr>
+        {% endif %}
         {% endfor %}
         {% endfor %}
     </table>
