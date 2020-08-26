@@ -5,4 +5,5 @@ flask_app/DB
 flask_app/static/profile_pics
 flask_app/gymsite.db
 flask_app/tictactoe.py
-migrations
+
+
