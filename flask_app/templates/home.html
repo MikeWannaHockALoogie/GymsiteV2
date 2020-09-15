@@ -6,7 +6,7 @@
     <h1 class='card-title'><a href='{{ url_for("workout_details", wod_id = wod.id) }}'>{{ wod.date }}</a></h1>
     {% for comp in wod.components %}
     <h1 class='card-title'> <a href='{{ url_for("component_detail", comp_id =comp.id)}}'>{{ comp.name }}</a> </h1>
-    <p class='card-body'>{{ comp }}</p>
+    <p class='card-body description'>{{ comp }}</p>
     {% endfor %}
 </div>
 {% endfor %}

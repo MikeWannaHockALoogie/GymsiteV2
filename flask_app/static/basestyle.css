@@ -109,3 +109,11 @@ td {
 .white{
     color: white
 }
+.description {
+    white-space: pre;
+}
+.header-bg-img{
+    background-image: url('flask_app/static/website_pictures/kettlebell-bg.jpg');
+    height: 100%;
+    width:100%
+}

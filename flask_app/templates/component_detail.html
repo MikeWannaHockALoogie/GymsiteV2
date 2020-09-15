@@ -13,7 +13,7 @@
 
 <div class='container-fluid mb-4 shadow pb-4 rounded'>
     <h1 class='component-title'>{{ component.name }}</h1>
-    <p class='component-body'>{{ component }}</p>
+    <p class='component-body description'>{{ component }}</p>
     <form action='{{ url_for("component_detail", comp_id = component.id) }}' method='post'>
 
         {{ form.hidden_tag() }}

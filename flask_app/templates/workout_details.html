@@ -11,7 +11,7 @@
 <div class='container-fluid shadow rounded  '>
     {% for comp in workout.components %}
     <h1 class='card-title'> <a href='{{ url_for("component_detail", comp_id =comp.id)}}'>{{ comp.name }}</a> </h1>
-    <p class='card-body'>{{ comp }}</p>
+    <p class='card-body description'>{{ comp }}</p>
     {% endfor %}
 </div>
 
